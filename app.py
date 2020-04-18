@@ -15,6 +15,16 @@ def hello_world():
 
 @app.route('/announcement')
 def send_announcement():
+    message_title = "Announcement"
+    message_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    message = messaging.Message(
+        notification=messaging.Notification(
+            title=message_title,
+            body=message_body,
+        ),
+        topic="announcements",
+    )
+    response = messaging.send(message)
     return 'Announcement has been sent out'
 
 
