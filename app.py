@@ -13,5 +13,10 @@ def hello_world():
     return 'Hello World!'
 
 
+@app.route('/announcement')
+def send_announcement():
+    return 'Announcement has been sent out'
+
+
 if __name__ == '__main__':
     app.run()
